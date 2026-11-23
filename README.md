@@ -1,19 +1,27 @@
-<p align="center"><img src="media/logo.png" width="140" alt="Face Fan logo"></p>
+<div align="center">
+
+<img src="media/logo.png" width="128" alt="Face Fan logo">
 
 # ELEGOO Mega 2560 Face Fan (OpenCV)
+
+**A desk fan that follows your face.**
 
 [![CI](https://github.com/PhamAnhHoangg/ELEGOO-2560-fan-OpenCV/actions/workflows/ci.yml/badge.svg)](https://github.com/PhamAnhHoangg/ELEGOO-2560-fan-OpenCV/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/PhamAnhHoangg/ELEGOO-2560-fan-OpenCV)](https://github.com/PhamAnhHoangg/ELEGOO-2560-fan-OpenCV/releases)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-A desk fan that **follows your face**. The laptop webcam finds your face with
+[Parts](#parts) · [Wiring](#wiring) · [Setup](#setup) · [How it works](#how-it-works) · [Troubleshooting](#troubleshooting) · [Versions](#versions)
+
+</div>
+
+The laptop webcam finds your face with
 OpenCV, and Python sends its position over USB to an ELEGOO Mega 2560. The
 Mega turns a servo to point the fan at you, and spins the fan through an
 L293D motor driver: full speed when you're far away, a gentle breeze when
 you're close. If nobody is around, the fan stops and looks forward again.
 
 | The camera finds the face | The fan follows |
-|---|---|
+|:---:|:---:|
 | [![camera demo](media/demo_camera.gif)](media/demo_camera.mp4) | [![fan demo](media/demo_fan.gif)](media/demo_fan.mp4) |
 | [Full video (mp4)](media/demo_camera.mp4) | [Full video (mp4)](media/demo_fan.mp4) |
 
