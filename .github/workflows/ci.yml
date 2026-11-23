@@ -11,7 +11,7 @@ jobs:
     name: Version numbers match
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - run: |
           v=$(tr -d '[:space:]' < VERSION)
           echo "VERSION file: $v"
@@ -23,7 +23,7 @@ jobs:
     name: Compile the Mega sketch
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: arduino/compile-sketches@v1
         with:
           fqbn: arduino:avr:mega
@@ -38,7 +38,7 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
