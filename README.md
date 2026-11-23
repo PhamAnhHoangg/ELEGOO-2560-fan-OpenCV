@@ -1,5 +1,8 @@
 # ELEGOO Mega 2560 Face Fan (OpenCV)
 
+[![CI](https://github.com/PhamAnhHoangg/ELEGOO-2560-fan-OpenCV/actions/workflows/ci.yml/badge.svg)](https://github.com/PhamAnhHoangg/ELEGOO-2560-fan-OpenCV/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 A desk fan that **follows your face**. The laptop webcam finds your face with
 OpenCV, and Python sends its position over USB to an ELEGOO Mega 2560. The
 Mega turns a servo to point the fan at you, and spins the fan through an

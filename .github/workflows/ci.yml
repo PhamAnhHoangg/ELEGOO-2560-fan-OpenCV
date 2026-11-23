@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  sketch:
+    name: Compile the Mega sketch
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: arduino/compile-sketches@v1
+        with:
+          fqbn: arduino:avr:mega
+          sketch-paths: face_fan_mega
+          libraries: |
+            - name: Servo
+
+  python:
+    name: Python script (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Syntax check and face detector available
+        run: |
+          python -m py_compile face_fan.py
+          python -c "import cv2; d = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml'); assert not d.empty(); print('OpenCV', cv2.__version__, 'face detector OK')"
