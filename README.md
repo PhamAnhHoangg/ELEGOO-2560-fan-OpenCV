@@ -11,6 +11,21 @@ you're close. If nobody is around, the fan stops and looks forward again.
 | [![camera demo](media/demo_camera.gif)](media/demo_camera.mp4) | [![fan demo](media/demo_fan.gif)](media/demo_fan.mp4) |
 | [Full video (mp4)](media/demo_camera.mp4) | [Full video (mp4)](media/demo_fan.mp4) |
 
+> **About the demo:** I had no way to attach the motor to the servo horn, so in
+> the video I hold the fan in my hand. The part that turns to follow my head is
+> the **servo**, and the fan spins from the L293D at the same time. Mount the
+> motor on the servo horn (tape, a hot-glue blob or a small bracket) to get the
+> full face-following fan.
+
+## Made with the Arduino IDE MCP plugin
+
+This project was built with my Claude plugin
+[**Arduino-IDE-MCP**](https://github.com/PhamAnhHoangg/Arduino-IDE-MCP). The
+plugin compiled and checked the sketch on the real toolchain, opened it in
+Arduino IDE, found the Mega's COM port, and made the 3D step-by-step wiring
+pictures and the interactive wiring page in [`wiring/`](wiring/). Install the
+plugin and ask for a face-following fan to try making the same project yourself.
+
 ---
 
 ## Parts
