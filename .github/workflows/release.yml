@@ -45,7 +45,7 @@ jobs:
           cp -r face_fan_mega face_fan.py requirements.txt wiring README.md LICENSE VERSION CHANGELOG.md "dist/$name/"
           (cd dist && zip -qr "$name.zip" "$name")
       - if: steps.check.outputs.exists == 'false'
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           tag_name: v${{ steps.v.outputs.version }}
           name: v${{ steps.v.outputs.version }}
