@@ -10,6 +10,8 @@
 import time
 import cv2
 
+__version__ = "1.0.0"   # keep in step with the VERSION file
+
 PORT = "COM3"   # <-- change to YOUR port number
 
 ser = None

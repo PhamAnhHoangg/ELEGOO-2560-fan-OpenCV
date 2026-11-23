@@ -7,6 +7,18 @@ on:
   workflow_dispatch:
 
 jobs:
+  version:
+    name: Version numbers match
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          v=$(tr -d '[:space:]' < VERSION)
+          echo "VERSION file: $v"
+          grep -q "FACE_FAN_VERSION \"$v\"" face_fan_mega/face_fan_mega.ino || { echo "::error::face_fan_mega.ino does not say $v"; exit 1; }
+          grep -q "__version__ = \"$v\"" face_fan.py || { echo "::error::face_fan.py does not say $v"; exit 1; }
+          grep -q "## \[$v\]" CHANGELOG.md || { echo "::error::CHANGELOG.md has no entry for $v"; exit 1; }
+
   sketch:
     name: Compile the Mega sketch
     runs-on: ubuntu-latest

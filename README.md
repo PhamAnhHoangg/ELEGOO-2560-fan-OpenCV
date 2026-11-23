@@ -1,6 +1,9 @@
+<p align="center"><img src="media/logo.png" width="140" alt="Face Fan logo"></p>
+
 # ELEGOO Mega 2560 Face Fan (OpenCV)
 
 [![CI](https://github.com/PhamAnhHoangg/ELEGOO-2560-fan-OpenCV/actions/workflows/ci.yml/badge.svg)](https://github.com/PhamAnhHoangg/ELEGOO-2560-fan-OpenCV/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/PhamAnhHoangg/ELEGOO-2560-fan-OpenCV)](https://github.com/PhamAnhHoangg/ELEGOO-2560-fan-OpenCV/releases)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 A desk fan that **follows your face**. The laptop webcam finds your face with
@@ -103,7 +106,7 @@ fine for testing). Take the power module off and add 3 wires: Mega 5V → top
    board box at the top.
 5. Press **Upload** and wait for "Done uploading".
 6. Optional check: open the Serial Monitor at **115200 baud**. You should see
-   `Face Fan (Mega) ready`. Type `50,80` and press Enter: the servo centres
+   `Face Fan (Mega) v1.0.0 ready`. Type `50,80` and press Enter: the servo centres
    and the fan spins for 2 seconds. **Close the Serial Monitor afterwards.**
 
 ### 2. Run the face tracking
@@ -153,6 +156,14 @@ Settings you may want to change in the sketch:
 | Burning smell | Unplug at once. Usually 5V touching GND: check that every red wire goes to a **+** rail (if your breadboard is upside down the printed colours are swapped, so go by the power module's + pin), and that the L293D notch points left. |
 | Arduino IDE: "arduino-verify-sketch cannot be executed" | A compile was already running. Wait, or press Cancel and Verify once. |
 
+## Versions
+
+The current version is in [`VERSION`](VERSION) and every change is listed in
+[`CHANGELOG.md`](CHANGELOG.md). The sketch prints its version when it starts
+(`Face Fan (Mega) v1.0.0 ready.` in the Serial Monitor). Download a ready zip
+from [Releases](https://github.com/PhamAnhHoangg/ELEGOO-2560-fan-OpenCV/releases):
+changing the number in `VERSION` publishes a new release automatically.
+
 ## Files
 
 ```
@@ -160,7 +171,8 @@ face_fan_mega/face_fan_mega.ino   Arduino sketch for the Mega
 face_fan.py                       webcam face tracking (Python + OpenCV)
 requirements.txt                  Python packages
 wiring/                           wiring diagram, 3D steps (PNG + interactive HTML)
-media/                            demo videos
+media/                            demo videos and logo
+VERSION, CHANGELOG.md             version number and change history
 ```
 
 ## Credits

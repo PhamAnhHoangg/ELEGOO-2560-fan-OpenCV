@@ -1,4 +1,5 @@
 // Face Fan - Elegoo MEGA 2560 R3 version
+#define FACE_FAN_VERSION "1.0.0"   // keep in step with the VERSION file
 // Parts: Mega 2560, L293D chip on a breadboard, SG90 servo, DC motor + fan blade,
 //        breadboard power supply module (set to 5V) with a 9V battery.
 // Wiring (all jumper wires, no screw terminals):
@@ -40,7 +41,8 @@ void setup() {
   analogWrite(FAN_EN, 0);
   head.write(90);
   Serial.begin(115200);
-  Serial.println("Face Fan (Mega) ready. Send position,speed (like 50,80) or -1.");
+  Serial.print("Face Fan (Mega) v" FACE_FAN_VERSION " ");
+  Serial.println("ready. Send position,speed (like 50,80) or -1.");
 }
 
 void loop() {
